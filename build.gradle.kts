@@ -1,12 +1,11 @@
 plugins {
-
+    id("ktlint")
+    id("ktlintHook")
 }
 
 allprojects {
-    group = "com.hexagonal"
-    version = "0.0.1-SNAPSHOT"
-}
-
-tasks.withType<Test> {
-    useJUnitPlatform()
+    apply {
+        plugin("common")
+        plugin("ktlint")
+    }
 }
